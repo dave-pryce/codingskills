@@ -4,14 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace hwapp.Controllers
+namespace codingskills.Controllers
 {
   public class HomeController : Controller
   {
     public IActionResult Index()
     {
-      var name = "Dot Net";
-      return View("Index", name);
+        return View();
+    }
+
+    public IActionResult Create(string languageName)
+    {
+      var model = new codingskills.Models.Language();
+      model.Name = languageName;
+      return View("Index",model);
     }
   }
 }
