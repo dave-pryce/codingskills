@@ -11,14 +11,14 @@
 
 <form asp-action="Create" asp-controller="Home">
   <input name="LanguageName" />
-  <input type="submit" value="Add Character"/>
+  <input class="btn btn-default" type="submit" value="Add Character"/>
 </form>
 
 
   <ul>
-  @foreach (var item in Model)
+  @foreach (var language in Model)
   {
-  <li>@item.Name</li>
+  <li>@language.Name</li>
   }
   </ul>
 </div>

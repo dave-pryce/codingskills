@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using codingskills.Models;
 
 namespace codingskills.Controllers
 {
@@ -10,14 +7,13 @@ namespace codingskills.Controllers
   {
     public IActionResult Index()
     {
-        return View();
+        return View(Language.GetAll());
     }
 
-    public IActionResult Create(string languageName)
+    public IActionResult Create(string LanguageName)
     {
-      var model = new codingskills.Models.Language();
-      model.Name = languageName;
-      return View("Index",model);
+      Language.Create(LanguageName);
+      return RedirectToAction("Index","Language");
     }
   }
 }
