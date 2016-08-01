@@ -13,7 +13,7 @@ namespace codingskills.Controllers
     public IActionResult Create(string LanguageName)
     {
       Language.Create(LanguageName);
-      return RedirectToAction("Index","Language");
+      return RedirectToAction("Index");
     }
   }
 }
